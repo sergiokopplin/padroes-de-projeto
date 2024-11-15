@@ -2,8 +2,9 @@
 
 ## O que é?
 
-O padrão de projetos Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis.
-O Strategy permite que o algoritmo varie independentemente dos clientes que o utilizam
+O padrão de projetos Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. O Strategy permite que o algoritmo varie independentemente dos clientes que o utilizam.
+
+Exemplo: Cálculo de diferentes tipos de frete disponíveis para pedidos feitos em setores distintos de um e-commerce.
 
 ## Quando Utilizar?
 

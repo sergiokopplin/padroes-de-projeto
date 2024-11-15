@@ -4,6 +4,8 @@
 
 O padrão de projetos Template Method define o esqueleto de um algoritmo dentro de um método, transferindo alguns de seus passos para subclasses. O template method permite que as subclasses redefinam certos passos de um algoritmo sem alterar a estrutura do mesmo.
 
+Exemplo: ​Implementação de um módulo de pagamentos do sistema de uma loja de confecções. Cada tipo de pagamento aplica diferentes taxas e descontos ao seu valor.
+
 Ele também pode conter:
 
 - Métodos concretos: Implementados na própria classe abstrata onde o template method se encontra
