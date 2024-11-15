@@ -1,5 +1,5 @@
-import { Observer } from "./Observer";
-import { Subject } from "./Subject";
+import { Observer } from "../interfaces/Observer";
+import { Subject } from "../interfaces/Subject";
 
 export class Newsletter implements Subject {
   protected observers: Observer[] = [];
