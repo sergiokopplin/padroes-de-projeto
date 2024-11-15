@@ -1,19 +1,84 @@
-export class Order {
-  private _value: number = 0;
+// Quando Utilizar?
+// - Quando muitas classes diferentes fazem a mesma coisa de formas diferentes.
+// - Quando se necessita de variantes de algorítmo.
+// - Quando é necessário evitar a exposição de dados ou algorítmos sensíveis
+// - Remoção de operadores condicionais que determinam o comportamento do algorítmo com base em objetos diferentes
 
-  public get value(): number {
-    return this._value;
+// Consequências
+// - Criação de família de Algoritmos
+// - O encapsulamento dos algoritmos nas classes Strategy
+// - Flexibilidade na escolha de qual estratégia utilizar
+// - Clientes devem conhecer as strategies
+// - Custo entre a comunicação Strategy e Context
+// - Aumento do número de classes na aplicação
+
+interface Frete {
+  calcula(valorPedido: number): number;
+}
+
+export class FreteComum implements Frete {
+  calcula(valorPedido: number): number {
+    return valorPedido * 0.05;
+  }
+}
+
+export class FreteExpresso implements Frete {
+  calcula(valorPedido: number): number {
+    return valorPedido * 0.1;
+  }
+}
+
+export abstract class Pedido {
+  private _valor: number = 0;
+  private _frete!: Frete;
+
+  public get valor(): number {
+    return this._valor;
   }
 
-  public set value(value: number) {
-    this._value = value;
+  public set valor(value: number) {
+    this._valor = value;
   }
 
-  public calculateCommonShipping(): number {
-    return this._value * 0.05;
+  public setTipoFrete(frete: Frete): void {
+    this._frete = frete;
   }
 
-  public calculateSpecialShipping(): number {
-    return this._value * 0.1;
+  public calculaFrete(): number {
+    return this._frete.calcula(this._valor);
+  }
+}
+
+export class PedidoEletronico extends Pedido {
+  private _nomeSetor: string = "";
+
+  constructor() {
+    super();
+    this._nomeSetor = "Eletronicos";
+  }
+
+  public get nomeSetor(): string {
+    return this._nomeSetor;
+  }
+
+  public set nomeSetor(value: string) {
+    this._nomeSetor = value;
+  }
+}
+
+export class PedidoMoveis extends Pedido {
+  private _nomeSetor: string = "";
+
+  constructor() {
+    super();
+    this._nomeSetor = "Moveis";
+  }
+
+  public get nomeSetor(): string {
+    return this._nomeSetor;
+  }
+
+  public set nomeSetor(value: string) {
+    this._nomeSetor = value;
   }
 }
