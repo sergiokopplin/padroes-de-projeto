@@ -1,9 +1,5 @@
-import {
-  FreteComum,
-  FreteExpresso,
-  PedidoEletronico,
-  PedidoMoveis,
-} from "./strategy";
+import { FreteComum, FreteExpresso } from "./Frete";
+import { PedidoEletronico, PedidoMoveis } from "./Pedido";
 
 const freteComum = new FreteComum();
 const freteExpresso = new FreteExpresso();
