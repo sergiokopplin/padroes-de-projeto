@@ -1,8 +1,11 @@
+// O que é?
+// O padrão de projetos Strategy define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. O Strategy permite que o algoritmo varie independentemente dos clientes que o utilizam
+
 // Quando Utilizar?
 // - Quando muitas classes diferentes fazem a mesma coisa de formas diferentes.
-// - Quando se necessita de variantes de algorítmo.
-// - Quando é necessário evitar a exposição de dados ou algorítmos sensíveis
-// - Remoção de operadores condicionais que determinam o comportamento do algorítmo com base em objetos diferentes
+// - Quando se necessita de variantes de algoritmo.
+// - Quando é necessário evitar a exposição de dados ou algoritmos sensíveis
+// - Remoção de operadores condicionais que determinam o comportamento do algoritmo com base em objetos diferentes
 
 // Consequências
 // - Criação de família de Algoritmos
