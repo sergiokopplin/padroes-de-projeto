@@ -1,37 +1,33 @@
-export class PagFacil {
-  private _valor: number;
-  private _parcelas: number;
-  private _numeroCartao: string;
-  private _cvv: string;
+import { Gateway } from "../Gateway";
 
-  public set valor(value: number) {
-    this._valor = value;
+export class PagFacil implements Gateway {
+  private valor: number;
+  private parcelas: number;
+  private numeroCartao: string;
+  private cvv: string;
+
+  public setValor(value: number) {
+    this.valor = value;
   }
 
-  public set parcelas(value: number) {
-    this._parcelas = value;
+  public setParcelas(value: number) {
+    this.parcelas = value;
   }
 
-  public set numeroCartao(value: string) {
-    this._numeroCartao = value;
+  public setNumeroCartao(value: string) {
+    this.numeroCartao = value;
   }
 
-  public set cvv(value: string) {
-    this._cvv = value;
+  public setCvv(value: string) {
+    this.cvv = value;
   }
 
   public validarCartao(): boolean {
-    return (
-      this._numeroCartao !== "" && this._cvv !== "" && this._cvv.length === 3
-    );
+    return this.numeroCartao !== "" && this.cvv !== "" && this.cvv.length === 3;
   }
 
   public realizarPagamento(): boolean {
-    console.log(
-      "Pagamento Realizado via PagFacil",
-      this._valor,
-      this._parcelas
-    );
+    console.log("Pagamento Realizado via PagFacil", this.valor, this.parcelas);
     return true;
   }
 }
